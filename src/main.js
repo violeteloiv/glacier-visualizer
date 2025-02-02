@@ -81,6 +81,10 @@ const Sketch = (p5) => {
     p5.mouseWheel = (event) => {
         CAMERA.onMouseScroll(event);
     }
+
+    p5.mouseDragged = (event) => {
+        CAMERA.onMouseDrag(event);
+    }
 }
 
 let myp5 = new p5(Sketch);

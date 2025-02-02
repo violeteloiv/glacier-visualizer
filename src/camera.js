@@ -48,6 +48,11 @@ export class Camera {
         console.log(this.zoom);
         console.log(this.center_lat, this.center_lon);
     }
+
+    onMouseDrag(event) {
+        this.center_lat -= (event.movementX / (this.zoom));
+        this.center_lon -= (event.movementY / (this.zoom));
+    }
 }
 
 export const CAMERA = new Camera(-74.4952, -104.1181, 4000, 1024, 720);
