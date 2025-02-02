@@ -39,8 +39,8 @@ export class Camera {
     onMouseScroll(event) {
         if (event.delta > 0) {
             this.zoom -= 1000;
-            if (this.zoom <= 2000) {
-                this.zoom = 2000;
+            if (this.zoom <= 4000) {
+                this.zoom = 4000;
             }
         } else {
             this.zoom += 1000;
@@ -50,4 +50,4 @@ export class Camera {
     }
 }
 
-export const CAMERA = new Camera(-74.4952, -104.1181, 2000, 400, 400);
+export const CAMERA = new Camera(-74.4952, -104.1181, 4000, 1024, 720);
