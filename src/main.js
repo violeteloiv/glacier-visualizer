@@ -54,6 +54,8 @@ const Sketch = (p5) => {
         p5.background("#022a5b");
 
         // Draw the boundaries as dotted lines.
+        p5.stroke("#ffffff");
+
         let top_left = new Point3D(map_data.corners[0].location[0], map_data.corners[0].location[1], map_data.corners[0].location[2]);
         let top_right = new Point3D(map_data.corners[1].location[0], map_data.corners[1].location[1], map_data.corners[1].location[2]);
         let bottom_left = new Point3D(map_data.corners[2].location[0], map_data.corners[2].location[1], map_data.corners[2].location[2]);
@@ -69,19 +71,17 @@ const Sketch = (p5) => {
         draw_points(p5, bottom);
         draw_points(p5, right);
         
+        p5.stroke("#000000");
+
         // Draw the places.
-        //map_data.places.forEach((place) => {
-        //    place.loops.forEach((loop) => {
-        //        let l = array_to_points(loop.data, PointTypes.LatLonZ);
-        //        draw_loop(p5, l);
-        //    });
-        //});
-
-        let loop = array_to_points(map_data.places[0].loops[0].data, PointTypes.LatLonZ);
-        draw_filled_loop(p5, loop);
-
-        let line = array_to_points(map_data.places[1].loops[0].data, PointTypes.LatLonZ);
-        draw_line(p5, line);
+        map_data.places.forEach((place) => {
+            place.loops.forEach((loop) => {
+                let l = array_to_points(loop.data, PointTypes.LatLonZ);
+                p5.fill(loop.color);
+                console.log(loop.color);
+                draw_filled_loop(p5, l);
+            });
+        });
 
 
         CAMERA.update(p5);
