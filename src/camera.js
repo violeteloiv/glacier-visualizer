@@ -17,19 +17,19 @@ export class Camera {
     }
 
     update(p5) {
-        if (p5.key == "ArrowRight" && p5.keyIsPressed) {
+        if ((p5.key == "ArrowRight" || p5.key == "d") && p5.keyIsPressed) {
             CAMERA.update_center_lat(CAMERA.center_lat + 0.0001);
         }
         
-        if (p5.key == "ArrowLeft" && p5.keyIsPressed) {
+        if ((p5.key == "ArrowLeft" || p5.key == "a") && p5.keyIsPressed) {
             CAMERA.update_center_lat(CAMERA.center_lat - 0.0001);
         }
 
-        if (p5.key == "ArrowUp" && p5.keyIsPressed) {
+        if ((p5.key == "ArrowUp" || p5.key == "w") && p5.keyIsPressed) {
             CAMERA.update_center_lon(CAMERA.center_lon - 0.0001);
         }
 
-        if (p5.key == "ArrowDown" && p5.keyIsPressed) {
+        if ((p5.key == "ArrowDown" || p5.key == "s") && p5.keyIsPressed) {
             CAMERA.update_center_lon(CAMERA.center_lon + 0.0001);
         }
     }
