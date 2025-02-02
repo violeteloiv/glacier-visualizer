@@ -1,4 +1,22 @@
 {
+    "corners": [
+        {
+            "name": "Top Left Corner",
+            "location": [-74.5711, -104.1915, 0]
+        },
+        {
+            "name": "Top Right Corner",
+            "location": [-74.4252, -104.1915, 0]
+        },
+        {
+            "name": "Bottom Left Corner",
+            "location": [-74.5711, -104.0436, 0]
+        },
+        {
+            "name": "Bottom Right Corner",
+            "location": [-74.4252, -104.0436, 0]
+        }
+    ],
     "places": [
         {
             "name": "Bucket Island",

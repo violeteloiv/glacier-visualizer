@@ -17,35 +17,37 @@ export class Camera {
     }
 
     update(p5) {
+        let inc = 0.0005 * (10000 / this.zoom);
+
         if ((p5.key == "ArrowRight" || p5.key == "d") && p5.keyIsPressed) {
-            CAMERA.update_center_lat(CAMERA.center_lat + 0.0001);
+            CAMERA.update_center_lat(CAMERA.center_lat + inc);
         }
         
         if ((p5.key == "ArrowLeft" || p5.key == "a") && p5.keyIsPressed) {
-            CAMERA.update_center_lat(CAMERA.center_lat - 0.0001);
+            CAMERA.update_center_lat(CAMERA.center_lat - inc);
         }
 
         if ((p5.key == "ArrowUp" || p5.key == "w") && p5.keyIsPressed) {
-            CAMERA.update_center_lon(CAMERA.center_lon - 0.0001);
+            CAMERA.update_center_lon(CAMERA.center_lon - inc);
         }
 
         if ((p5.key == "ArrowDown" || p5.key == "s") && p5.keyIsPressed) {
-            CAMERA.update_center_lon(CAMERA.center_lon + 0.0001);
+            CAMERA.update_center_lon(CAMERA.center_lon + inc);
         }
     }
 
     onMouseScroll(event) {
         if (event.delta > 0) {
             this.zoom -= 1000;
-            if (this.zoom <= 0) {
-                this.zoom = 0;
+            if (this.zoom <= 2000) {
+                this.zoom = 2000;
             }
         } else {
             this.zoom += 1000;
         }
+        console.log(this.zoom);
+        console.log(this.center_lat, this.center_lon);
     }
 }
 
-// -104.1493, -74.4982
-
-export const CAMERA = new Camera(-74.5271, -104.1102, 50000, 400, 400);
+export const CAMERA = new Camera(-74.4952, -104.1181, 2000, 400, 400);
