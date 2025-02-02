@@ -41,14 +41,20 @@ const Sketch = (p5) => {
     p5.setup = () => {
         p5.createCanvas(CAMERA.width, CAMERA.height);
         p5.background("#022a5b");
+    }
+
+    p5.draw = () => {
+        p5.background("#022a5b");
 
         var loop = array_to_points(map_data.places[0].loops[0].data, PointTypes.LatLonZ);
 
         draw_filled_loop(p5, loop);
+
+        CAMERA.update(p5);
     }
 
-    p5.draw = () => {
-
+    p5.mouseWheel = (event) => {
+        CAMERA.onMouseScroll(event);
     }
 }
 
