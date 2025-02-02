@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "live-server": "^1.2.2",
+    "systemjs": "^6.15.1"
+  }
+}
