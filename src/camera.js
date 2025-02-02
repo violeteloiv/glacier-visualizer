@@ -38,12 +38,12 @@ export class Camera {
 
     onMouseScroll(event) {
         if (event.delta > 0) {
-            this.zoom -= 1000;
+            this.zoom -= 1000 * (this.zoom / 10000);
             if (this.zoom <= 4000) {
                 this.zoom = 4000;
             }
         } else {
-            this.zoom += 1000;
+            this.zoom += 1000 * (this.zoom / 10000);
         }
         console.log(this.zoom);
         console.log(this.center_lat, this.center_lon);

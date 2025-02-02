@@ -5,9 +5,6 @@ export const PointTypes = Object.freeze({
     LatLonZ: 1,
 });
 
-const lat_lon_aspect_ratio = Math.cos(CAMERA.center_lat);
-const resolution = 100;
-
 // array structure:
     // [[x1, y1], [x2, y2], ...]
 export var array_to_points = (array, type) => {
@@ -20,6 +17,7 @@ export var array_to_points = (array, type) => {
     return list;
 }
 
+const resolution = 100;
 export var create_line_between_points = (point1, point2) => {
     if (point1.type != point2.type) throw Error("Unable to interpolate between points of different types.");
 
@@ -46,7 +44,7 @@ export class Point3D {
 
     as_xy() {
         if (this.type != PointTypes.PlotXYZ) {
-            let x_raw = CAMERA.zoom * (this.val1 - CAMERA.center_lat) * lat_lon_aspect_ratio;
+            let x_raw = CAMERA.zoom * (this.val1 - CAMERA.center_lat);
             let y_raw = CAMERA.zoom * (this.val2 - CAMERA.center_lon);
 
             this.type = PointTypes.PlotXYZ;

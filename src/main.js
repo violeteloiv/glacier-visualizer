@@ -69,11 +69,20 @@ const Sketch = (p5) => {
         draw_points(p5, bottom);
         draw_points(p5, right);
         
-        // Markus Island Test
+        // Draw the places.
+        //map_data.places.forEach((place) => {
+        //    place.loops.forEach((loop) => {
+        //        let l = array_to_points(loop.data, PointTypes.LatLonZ);
+        //        draw_loop(p5, l);
+        //    });
+        //});
 
-        var loop = array_to_points(map_data.places[0].loops[0].data, PointTypes.LatLonZ);
-
+        let loop = array_to_points(map_data.places[0].loops[0].data, PointTypes.LatLonZ);
         draw_filled_loop(p5, loop);
+
+        let line = array_to_points(map_data.places[1].loops[0].data, PointTypes.LatLonZ);
+        draw_line(p5, line);
+
 
         CAMERA.update(p5);
     }
