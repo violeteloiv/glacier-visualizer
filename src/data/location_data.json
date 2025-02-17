@@ -1,18 +1,9 @@
 {
     "overlays": [
         {
-            "name": "015_data",
-            "color": "#ff0000",
-            "data": [
-                {
-                    "text": "",
-                    "location": [-74.5265, -104.1515, 0]
-                }
-            ]
-        },
-        {
-            "name": "locations",
+            "name": "Main Locations",
             "color": "#000000",
+            "toggle_default": true,
             "data": [
                 {
                     "text": "FOB",
@@ -37,6 +28,17 @@
                 {
                     "text": "TSZ",
                     "location": [-74.5235, -104.0920, 0]
+                }
+            ]
+        },
+        {
+            "name": "E-015 Teleportation Location Data",
+            "color": "#ff0000",
+            "toggle_default": false,
+            "data": [
+                {
+                    "text": "",
+                    "location": [-74.5265, -104.1515, 0]
                 }
             ]
         }

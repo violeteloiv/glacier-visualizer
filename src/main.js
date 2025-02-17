@@ -1,9 +1,12 @@
 import { array_to_points, PointTypes, create_line_between_points, Point3D } from "./point3D.js"
 import { draw_filled_loop, draw_text_point, draw_points, draw_point } from "./point_functions.js";
 import { CAMERA } from "./camera.js";
+import { create_toggle } from "./html_additions.js";
 
 const Sketch = (p5) => {
     var map_data, location_data;
+
+    var overlay_toggles = {};
 
     p5.preload = () => {
         map_data = p5.loadJSON('./src/data/main_map_data.json');
@@ -13,6 +16,12 @@ const Sketch = (p5) => {
     p5.setup = () => {
         p5.createCanvas(CAMERA.width, CAMERA.height);
         p5.background("#022a5b");
+
+        // Overlay toggles
+        location_data.overlays.forEach((overlay) => {
+            overlay_toggles[overlay.name] = overlay.toggle_default;
+            create_toggle(p5, overlay.name, overlay_toggles);
+        });
     }
 
     p5.draw = () => {
@@ -51,13 +60,15 @@ const Sketch = (p5) => {
         location_data.overlays.forEach((overlay) => {
             p5.stroke(overlay.color);
 
-            overlay.data.forEach((d) => {
-                if (d.text == "") {
-                    draw_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ));
-                } else {
-                    draw_text_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ), d.text);
-                }
-            });
+            if (overlay_toggles[overlay.name]) {
+                overlay.data.forEach((d) => {
+                    if (d.text == "") {
+                        draw_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ));
+                    } else {
+                        draw_text_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ), d.text);
+                    }
+                });
+            }
         });
 
         CAMERA.update(p5);
