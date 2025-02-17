@@ -45,8 +45,6 @@ export class Camera {
         } else {
             this.zoom += 1000 * (this.zoom / 10000);
         }
-        console.log(this.zoom);
-        console.log(this.center_lat, this.center_lon);
     }
 
     onMouseDrag(event) {

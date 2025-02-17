@@ -1,48 +1,13 @@
-import {array_to_points, PointTypes, create_line_between_points, Point3D} from "./point3D.js"
+import { array_to_points, PointTypes, create_line_between_points, Point3D } from "./point3D.js"
+import { draw_filled_loop, draw_text_point, draw_points, draw_point } from "./point_functions.js";
 import { CAMERA } from "./camera.js";
 
-var draw_points = (p5, line) => {
-    for (let i = 0; i < line.length; i++) {
-        let p = line[i].as_xy();
-        p5.point(p.x, p.y);
-    }
-}
-
-var draw_line = (p5, line) => {
-    for (let i = 0; i < line.length - 1; i++) {
-        let p1 = line[i].as_xy();
-        let p2 = line[i + 1].as_xy();
-
-        p5.vertex(p1.x, p1.y);
-
-        p5.line(p1.x, p1.y, p2.x, p2.y);
-    }
-
-    p5.vertex(line[line.length - 1].as_xy().x, line[line.length - 1].as_xy().y);
-}
-
-var draw_loop = (p5, loop) => {
-    draw_line(p5, loop);
-
-    let pFirst = loop[0].as_xy();
-    let pLast = loop[loop.length - 1].as_xy();
-
-    p5.line(pLast.x, pLast.y, pFirst.x, pFirst.y);
-}
-
-var draw_filled_loop = (p5, loop) => {
-    p5.beginShape();
-
-    draw_loop(p5, loop);
-
-    p5.endShape(p5.CLOSE);
-}
-
 const Sketch = (p5) => {
-    var map_data;
+    var map_data, location_data;
 
     p5.preload = () => {
         map_data = p5.loadJSON('./src/data/main_map_data.json');
+        location_data = p5.loadJSON('./src/data/location_data.json');
     }
     
     p5.setup = () => {
@@ -78,11 +43,22 @@ const Sketch = (p5) => {
             place.loops.forEach((loop) => {
                 let l = array_to_points(loop.data, PointTypes.LatLonZ);
                 p5.fill(loop.color);
-                console.log(loop.color);
                 draw_filled_loop(p5, l);
             });
         });
 
+        // Overlays
+        location_data.overlays.forEach((overlay) => {
+            p5.stroke(overlay.color);
+
+            overlay.data.forEach((d) => {
+                if (d.text == "") {
+                    draw_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ));
+                } else {
+                    draw_text_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ), d.text);
+                }
+            });
+        });
 
         CAMERA.update(p5);
     }
@@ -96,4 +72,4 @@ const Sketch = (p5) => {
     }
 }
 
-let myp5 = new p5(Sketch);
+new p5(Sketch);
