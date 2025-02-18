@@ -62,9 +62,13 @@ export class Point3D {
 
     as_lonlat() {
         if (this.type != PointTypes.LatLonZ) {
-            // TODO: Implement XY -> LonLat
+            let lat_raw = this.val1 - CAMERA.width / 2;
+            let lon_raw = this.val2 - CAMERA.height / 2;
+
             this.type = PointTypes.LatLonZ;
-            
+            this.val1 = (lat_raw / CAMERA.zoom) + CAMERA.center_lat;
+            this.val2 = (lon_raw / CAMERA.zoom) + CAMERA.center_lon;
+            this.val3 = this.val3;
         }
 
         return {

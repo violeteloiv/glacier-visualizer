@@ -35,7 +35,7 @@ export class Camera {
             CAMERA.update_center_lon(CAMERA.center_lon + inc);
         }
     }
-
+    
     onMouseScroll(event) {
         if (event.delta > 0) {
             this.zoom -= 1000 * (this.zoom / 10000);

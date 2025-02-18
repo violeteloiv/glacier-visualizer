@@ -7,6 +7,7 @@ const Sketch = (p5) => {
     var map_data, location_data;
 
     var overlay_toggles = {};
+    var location_clicked_elem;
 
     p5.preload = () => {
         map_data = p5.loadJSON('./src/data/main_map_data.json');
@@ -22,6 +23,8 @@ const Sketch = (p5) => {
             overlay_toggles[overlay.name] = overlay.toggle_default;
             create_toggle(p5, overlay.name, overlay_toggles);
         });
+
+        location_clicked_elem = p5.createDiv('');
     }
 
     p5.draw = () => {
@@ -80,6 +83,19 @@ const Sketch = (p5) => {
 
     p5.mouseDragged = (event) => {
         CAMERA.onMouseDrag(event);
+    }
+
+    p5.mouseClicked = (event) => {
+        let x = event.x;
+        let y = event.y;
+
+        let loc = new Point3D(x, y, 0, PointTypes.PlotXYZ).as_lonlat();
+        loc.lat = +loc.lat.toFixed(4);
+        loc.lon = +loc.lon.toFixed(4);
+
+        if (event.ctrlKey) {
+            location_clicked_elem.html(`${loc.lat}, ${loc.lon}`);
+        }
     }
 }
 
