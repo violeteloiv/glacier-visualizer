@@ -20,7 +20,7 @@ const Sketch = (p5) => {
 
         let div = p5.createDiv();
         div.id("overlays");
-        div.position(1040, 8);
+        div.position(p5.width + 10, 8);
 
         // Overlay toggles
         location_data.groups.forEach((group) => {
@@ -98,7 +98,7 @@ const Sketch = (p5) => {
     }
 
     p5.mouseDragged = (event) => {
-        CAMERA.onMouseDrag(event);
+        CAMERA.onMouseDrag(p5, event);
     }
 
     p5.mouseClicked = (event) => {

@@ -47,10 +47,12 @@ export class Camera {
         }
     }
 
-    onMouseDrag(event) {
-        this.center_lat -= (event.movementX / (this.zoom));
-        this.center_lon -= (event.movementY / (this.zoom));
+    onMouseDrag(p5, event) {
+        if (event.x < p5.width && event.x > 0 && event.y < p5.height && event.y > 0) {
+            this.center_lat -= (event.movementX / (this.zoom));
+            this.center_lon -= (event.movementY / (this.zoom));
+        }
     }
 }
 
-export const CAMERA = new Camera(-74.4952, -104.1181, 4000, 1024, 720);
+export const CAMERA = new Camera(-74.4952, -104.1181, 4000, window.innerWidth / 2, window.innerHeight * 3 / 4);
