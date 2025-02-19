@@ -11,9 +11,9 @@ export var draw_points = (p5, line) => {
     }
 }
 
-export var draw_text_point = (p5, point, name) => {
+export var draw_text_point = (p5, point, name, color) => {
     draw_point(p5, point);
-    p5.fill("#000000");
+    p5.fill(color);
     p5.text(name, point.as_xy().x + 3, point.as_xy().y - 3);
 }
 

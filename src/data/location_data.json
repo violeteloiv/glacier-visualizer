@@ -32,6 +32,25 @@
             ]
         },
         {
+            "name": "Secondary Locations",
+            "color": "#555555",
+            "toggle_default": true,
+            "data": [
+                {
+                    "text": "SP",
+                    "location": [-74.5528, -104.1050, 0]
+                },
+                {
+                    "text": "Church",
+                    "location": [-74.4705, -104.0720, 0]
+                },
+                {
+                    "text": "Dome",
+                    "location": [-74.4972, -104.1057, 0]
+                }
+            ]
+        },
+        {
             "name": "E-015 Teleportation Location Data",
             "color": "#ff0000",
             "toggle_default": false,

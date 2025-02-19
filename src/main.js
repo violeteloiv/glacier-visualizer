@@ -68,7 +68,7 @@ const Sketch = (p5) => {
                     if (d.text == "") {
                         draw_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ));
                     } else {
-                        draw_text_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ), d.text);
+                        draw_text_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ), d.text, overlay.color);
                     }
                 });
             }
