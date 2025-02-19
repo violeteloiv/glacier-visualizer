@@ -1,7 +1,7 @@
 import { array_to_points, PointTypes, create_line_between_points, Point3D } from "./point3D.js"
 import { draw_filled_loop, draw_text_point, draw_points, draw_point } from "./point_functions.js";
 import { CAMERA } from "./camera.js";
-import { create_toggle } from "./html_additions.js";
+import { create_toggle, create_toggle_group } from "./html_additions.js";
 
 const Sketch = (p5) => {
     var map_data, location_data;
@@ -18,10 +18,19 @@ const Sketch = (p5) => {
         p5.createCanvas(CAMERA.width, CAMERA.height);
         p5.background("#022a5b");
 
+        let div = p5.createDiv();
+        div.id("overlays");
+        div.position(1040, 8);
+
         // Overlay toggles
-        location_data.overlays.forEach((overlay) => {
-            overlay_toggles[overlay.name] = overlay.toggle_default;
-            create_toggle(p5, overlay.name, overlay_toggles);
+        location_data.groups.forEach((group) => {
+            overlay_toggles[group.name] = { value: group.toggle_default, div: null };
+            let overlay_group = create_toggle_group(p5, group.name, overlay_toggles);
+
+            group.sub_overlays.forEach((overlay) => {
+                overlay_toggles[group.name][overlay.name] = { value: overlay.toggle_default, checkbox: null };
+                create_toggle(p5, overlay.name, overlay_toggles, group.name);
+            });            
         });
 
         location_clicked_elem = p5.createDiv('');
@@ -55,23 +64,30 @@ const Sketch = (p5) => {
             place.loops.forEach((loop) => {
                 let l = array_to_points(loop.data, PointTypes.LatLonZ);
                 p5.fill(loop.color);
+                if (loop.lined) {
+                    p5.stroke("#000000");
+                } else {
+                    p5.noStroke();
+                }
                 draw_filled_loop(p5, l);
             });
         });
 
         // Overlays
-        location_data.overlays.forEach((overlay) => {
-            p5.stroke(overlay.color);
+        location_data.groups.forEach((group) => {
+            group.sub_overlays.forEach((overlay) => {
+                p5.stroke(overlay.color);
 
-            if (overlay_toggles[overlay.name]) {
-                overlay.data.forEach((d) => {
-                    if (d.text == "") {
-                        draw_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ));
-                    } else {
-                        draw_text_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ), d.text, overlay.color);
-                    }
-                });
-            }
+                if (overlay_toggles[group.name][overlay.name].value) {
+                    overlay.data.forEach((d) => {
+                        if (d.text == "") {
+                            draw_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ));
+                        } else {
+                            draw_text_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ), d.text, overlay.color);
+                        }
+                    });
+                }
+            });
         });
 
         CAMERA.update(p5);

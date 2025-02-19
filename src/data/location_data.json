@@ -1,63 +1,276 @@
 {
-    "overlays": [
+    "groups": [
         {
-            "name": "Main Locations",
-            "color": "#000000",
+            "name": "Locations",
             "toggle_default": true,
-            "data": [
+            "sub_overlays": [
                 {
-                    "text": "FOB",
-                    "location": [-74.5264, -104.1560, 0]
+                    "name": "Main Locations",
+                    "color": "#000000",
+                    "toggle_default": true,
+                    "data": [
+                        {
+                            "text": "FOB",
+                            "location": [-74.5264, -104.1560, 0]
+                        },
+                        {
+                            "text": "EA",
+                            "location": [-74.4682, -104.0940, 0]
+                        },
+                        {
+                            "text": "ME",
+                            "location": [-74.5144, -104.1240, 0]
+                        },
+                        {
+                            "text": "SR",
+                            "location": [-74.4827, -104.1510, 0]
+                        },
+                        {
+                            "text": "NS",
+                            "location": [-74.4527, -104.1630, 0]
+                        },
+                        {
+                            "text": "TSZ",
+                            "location": [-74.5235, -104.0920, 0]
+                        }
+                    ]
                 },
                 {
-                    "text": "EA",
-                    "location": [-74.4682, -104.0940, 0]
-                },
-                {
-                    "text": "ME",
-                    "location": [-74.5144, -104.1240, 0]
-                },
-                {
-                    "text": "SR",
-                    "location": [-74.4827, -104.1510, 0]
-                },
-                {
-                    "text": "NS",
-                    "location": [-74.4527, -104.1630, 0]
-                },
-                {
-                    "text": "TSZ",
-                    "location": [-74.5235, -104.0920, 0]
+                    "name": "Secondary Locations",
+                    "color": "#555555",
+                    "toggle_default": true,
+                    "data": [
+                        {
+                            "text": "SP",
+                            "location": [-74.5528, -104.1050, 0]
+                        },
+                        {
+                            "text": "Church",
+                            "location": [-74.4705, -104.0720, 0]
+                        },
+                        {
+                            "text": "Dome",
+                            "location": [-74.4972, -104.1057, 0]
+                        }
+                    ]
                 }
             ]
         },
         {
-            "name": "Secondary Locations",
-            "color": "#555555",
-            "toggle_default": true,
-            "data": [
-                {
-                    "text": "SP",
-                    "location": [-74.5528, -104.1050, 0]
-                },
-                {
-                    "text": "Church",
-                    "location": [-74.4705, -104.0720, 0]
-                },
-                {
-                    "text": "Dome",
-                    "location": [-74.4972, -104.1057, 0]
-                }
-            ]
-        },
-        {
-            "name": "E-015 Teleportation Location Data",
-            "color": "#ff0000",
+            "name": "Innovation Department Data",
             "toggle_default": false,
-            "data": [
+            "sub_overlays": [
                 {
-                    "text": "",
-                    "location": [-74.5265, -104.1515, 0]
+                    "name": "E-015 Teleportation Location Data",
+                    "color": "#ff0000",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "",
+                            "location": [-74.5265, -104.1515, 0]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Glacier Caves",
+            "toggle_default": false,
+            "sub_overlays": [
+                {
+                    "name": "Cave 1",
+                    "color": "#ff0000",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C1",
+                            "location": [-74.5402, -104.1593, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 2",
+                    "color": "#00ff00",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C2",
+                            "location": [-74.5074, -104.1573, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.508, -104.1555, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.506, -104.1593, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 3",
+                    "color": "#ff0000",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C3",
+                            "location": [-74.489, -104.1623, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.49, -104.162, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4895, -104.1589, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4885, -104.1588, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 4",
+                    "color": "#0000ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C4",
+                            "location": [-74.5077, -104.1502, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5062, -104.1492, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5015, -104.1514, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5011, -104.1501, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 5",
+                    "color": "#00ff00",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C5",
+                            "location": [-74.5385, -104.1386, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5391, -104.1371, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5371, -104.1377, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5349, -104.1377, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5334, -104.1390, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 6",
+                    "color": "#0000ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C6",
+                            "location": [-74.5418, -104.1322, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5426, -104.1315, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5418, -104.1322, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5393, -104.1328, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 7",
+                    "color": "#ff00ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C7",
+                            "location": [-74.4578, -104.1315, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4589, -104.1322, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4566, -104.1315, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4561, -104.1319, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4573, -104.133, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 8",
+                    "color": "#ff00ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C8",
+                            "location": [-74.5526, -104.1268, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.551, -104.1249, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5509, -104.1277, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5502, -104.127, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 9",
+                    "color": "#ba6b09",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C9",
+                            "location": [-74.5471, -104.1255, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5453, -104.1255, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5439, -104.1236, 0]
+                        }
+                    ]
                 }
             ]
         }
