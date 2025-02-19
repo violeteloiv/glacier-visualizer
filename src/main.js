@@ -7,6 +7,7 @@ const Sketch = (p5) => {
     var map_data, location_data;
 
     var overlay_toggles = {};
+    var current_clicked_point;
     var location_clicked_elem;
 
     p5.preload = () => {
@@ -15,12 +16,13 @@ const Sketch = (p5) => {
     }
     
     p5.setup = () => {
-        p5.createCanvas(CAMERA.width, CAMERA.height);
+        let canvas = p5.createCanvas(CAMERA.width, CAMERA.height);
+        console.log(canvas.id());
         p5.background("#022a5b");
 
         let div = p5.createDiv();
         div.id("overlays");
-        div.position(p5.width + 10, 8);
+        div.position(p5.width + 20, 8);
 
         // Overlay toggles
         location_data.groups.forEach((group) => {
@@ -90,6 +92,15 @@ const Sketch = (p5) => {
             });
         });
 
+        // Draw the current click point 
+        p5.stroke("#00ff00");
+        p5.strokeWeight(4);
+        if (current_clicked_point) {
+            let converted = new Point3D(current_clicked_point.lat, current_clicked_point.lon, 0, PointTypes.LatLonZ).as_xy();
+            p5.point(converted.x, converted.y);
+        }
+        p5.strokeWeight(1);
+
         CAMERA.update(p5);
     }
 
@@ -105,12 +116,12 @@ const Sketch = (p5) => {
         let x = event.x;
         let y = event.y;
 
-        let loc = new Point3D(x, y, 0, PointTypes.PlotXYZ).as_lonlat();
-        loc.lat = +loc.lat.toFixed(4);
-        loc.lon = +loc.lon.toFixed(4);
-
         if (event.ctrlKey) {
-            location_clicked_elem.html(`${loc.lat}, ${loc.lon}`);
+            current_clicked_point = new Point3D(x - 7.5, y - 8, 0, PointTypes.PlotXYZ).as_lonlat();
+            current_clicked_point.lat = +current_clicked_point.lat.toFixed(4);
+            current_clicked_point.lon = +current_clicked_point.lon.toFixed(4);
+
+            location_clicked_elem.html(`${current_clicked_point.lat}, ${current_clicked_point.lon}`);
         }
     }
 }
