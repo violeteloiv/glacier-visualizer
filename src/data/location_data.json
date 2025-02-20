@@ -51,6 +51,10 @@
                         {
                             "text": "Dome",
                             "location": [-74.4972, -104.1057, 0]
+                        },
+                        {
+                            "text": "VW Cave",
+                            "location": [-74.5615, -104.0950, 0]
                         }
                     ]
                 }
@@ -269,6 +273,395 @@
                         {
                             "text": "",
                             "location": [-74.5439, -104.1236, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 10",
+                    "color": "#ff00ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C10",
+                            "location": [-74.5167, -104.1272, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5147, -104.1296, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5128, -104.1257, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5119, -104.1265, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 11",
+                    "color": "#0000ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C9",
+                            "location": [-74.5471, -104.1255, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5453, -104.1255, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5439, -104.1236, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 12",
+                    "color": "#00ff00",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C12",
+                            "location": [-74.4883, -104.117, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4894, -104.1167, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.486, -104.1178, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4869, -104.1184, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4881, -104.1193, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 13",
+                    "color": "#00ff00",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C13",
+                            "location": [-74.5486, -104.1121, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5455, -104.1127, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5455, -104.1127, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 14",
+                    "color": "#ff0000",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C14",
+                            "location": [-74.5451, -104.1143, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5453, -104.1151, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5438, -104.1143, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 15",
+                    "color": "#ff00ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C15",
+                            "location": [-74.5394, -104.1155, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5397, -104.1143, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5384, -104.1139, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5374, -104.1164, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.537, -104.1177, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5385, -104.1177, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 16",
+                    "color": "#ba6b09",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C16",
+                            "location": [-74.5073, -104.1102, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.504, -104.1127, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 17",
+                    "color": "#000000",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C17",
+                            "location": [-74.4685, -104.1096, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4661, -104.1093, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 18",
+                    "color": "#0000ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C18",
+                            "location": [-74.5405, -104.1056, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.541, -104.1069, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5402, -104.1046, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.538, -104.1051, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 19",
+                    "color": "#000000",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C19",
+                            "location": [-74.5349, -104.0991, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5325, -104.0997, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5321, -104.0989, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5326, -104.0981, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 20",
+                    "color": "#00ff00",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C20",
+                            "location": [-74.5162, -104.099, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 21",
+                    "color": "#ff00ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C21",
+                            "location": [-74.496, -104.0989, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4951, -104.1023, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4938, -104.1019, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4923, -104.0979, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 22",
+                    "color": "#0000ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C22",
+                            "location": [-74.4955, -104.0948, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4936, -104.0939, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4921, -104.0965, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 23",
+                    "color": "#0000ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C23",
+                            "location": [-74.5163, -104.0956, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5164, -104.0975, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5151, -104.0952, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5144, -104.0958, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 24",
+                    "color": "#00ff00",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C24",
+                            "location": [-74.4671, -104.0973, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4659, -104.0975, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4674, -104.0959, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4666, -104.096, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 25",
+                    "color": "#ba6b09",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C25",
+                            "location": [-74.518, -104.087, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5178, -104.0892, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.517, -104.0857, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.5166, -104.0844, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 26",
+                    "color": "#000000",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C26",
+                            "location": [-74.4789, -104.0847, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4796, -104.0841, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4759, -104.0852, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 27",
+                    "color": "#ff00ff",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C27",
+                            "location": [-74.4981, -104.0707, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4962, -104.0719, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.495, -104.0705, 0]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cave 28",
+                    "color": "#ff0000",
+                    "toggle_default": false,
+                    "data": [
+                        {
+                            "text": "C28",
+                            "location": [-74.4658, -104.0761, 0]
+                        },
+                        {
+                            "text": "",
+                            "location": [-74.4608, -104.0792, 0]
                         }
                     ]
                 }

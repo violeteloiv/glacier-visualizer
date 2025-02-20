@@ -117,7 +117,7 @@ const Sketch = (p5) => {
         let y = event.y;
 
         if (event.ctrlKey) {
-            current_clicked_point = new Point3D(x - 7.5, y - 8, 0, PointTypes.PlotXYZ).as_lonlat();
+            current_clicked_point = new Point3D(x - 12, y - 12, 0, PointTypes.PlotXYZ).as_lonlat();
             current_clicked_point.lat = +current_clicked_point.lat.toFixed(4);
             current_clicked_point.lon = +current_clicked_point.lon.toFixed(4);
 
