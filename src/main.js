@@ -1,5 +1,5 @@
 import { array_to_points, PointTypes, create_line_between_points, Point3D } from "./point3D.js"
-import { draw_filled_loop, draw_text_point, draw_points, draw_point } from "./point_functions.js";
+import { draw_filled_loop, draw_line, draw_text_point, draw_points, draw_point } from "./point_functions.js";
 import { CAMERA } from "./camera.js";
 import { create_toggle, create_toggle_group } from "./html_additions.js";
 
@@ -16,8 +16,7 @@ const Sketch = (p5) => {
     }
     
     p5.setup = () => {
-        let canvas = p5.createCanvas(CAMERA.width, CAMERA.height);
-        console.log(canvas.id());
+        p5.createCanvas(CAMERA.width, CAMERA.height);
         p5.background("#022a5b");
 
         let div = p5.createDiv();
@@ -82,10 +81,22 @@ const Sketch = (p5) => {
 
                 if (overlay_toggles[group.name][overlay.name].value) {
                     overlay.data.forEach((d) => {
-                        if (d.text == "") {
-                            draw_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ));
-                        } else {
-                            draw_text_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ), d.text, overlay.color);
+                        if (d.location) {
+                            if (d.text == "") {
+                                draw_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ));
+                            } else {
+                                draw_text_point(p5, new Point3D(d.location[0], d.location[1], d.location[2], PointTypes.LatLonZ), d.text, overlay.color);
+                            }
+                        } else if (d.loop) {
+                            let l = array_to_points(d.loop.data, PointTypes.LatLonZ);
+                            
+                            p5.fill(d.loop.color);
+                            if (d.loop.lined) {
+                                p5.stroke("#000000");
+                            } else {
+                                p5.noStroke();
+                            }
+                            draw_filled_loop(p5, l);
                         }
                     });
                 }
